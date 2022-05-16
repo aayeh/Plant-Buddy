@@ -7,8 +7,13 @@ import {PlantContext} from "../app.js"
 
 
 function PlantInfo (props) {
+  const [addedPlant, setAddedPlant] = useState(false)
   const params = useParams()
   const {plants,addNewPlant} = useContext(PlantContext)
+  const addButtonClicked =() =>{
+    addNewPlant(params.name);
+    setAddedPlant(true)
+  }
   const result = JSONDATA.filter(plant => plant.name == params.name)[0]
     return(
       <div className = "search">
@@ -50,9 +55,10 @@ function PlantInfo (props) {
           </tr>
         </table>
         <br/>
-        <button className = "addButton" onClick = {() => addNewPlant(params.name)}>
+        <button className = "addButton" onClick = {addButtonClicked}>
           Add to Profile
         </button>
+        {addedPlant && <div style={{color:"green"}}>Plant Added!</div>}
       </div>
 
     )
