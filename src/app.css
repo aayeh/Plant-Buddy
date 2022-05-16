@@ -1,0 +1,100 @@
+
+
+.next-steps .fa-link {
+  margin-right: 5px;
+}
+
+/* Fix for use only flexbox in content area */
+.next-steps .row {
+  margin-bottom: 0;
+}
+
+.next-steps .col-md-5 {
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .next-steps .col-md-5 {
+    margin-bottom: 0;
+  }
+}
+
+.spinner {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.result-block-container .result-block {
+  opacity: 1;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  text-align: left;
+  border: black ridge 1px;
+  border-radius: 10px;
+  margin: 3px;
+  width: 20rem;
+  padding-left: 10px;
+}
+.button{
+  background-color: transparent;
+  text-align: left;
+  border: black ridge 1px;
+  border-radius: 10px;
+  margin: 3px;
+  width: 20rem;
+  padding-left: 10px;
+}
+.button:hover{
+  background-color: transparent;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.plantTable {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 600px;
+  height: 200px;
+  text-align: left;
+  border-collapse: collapse;
+}
+.plantTable tr:nth-child(even) {
+  background: #D0E4F5;
+}
+td:nth-child(even){
+  width: 400px
+}
+.plantTable td, table.plantTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+
+.addButton{
+  background-color: #2e466e;
+  color: white;
+  text-align: center;
+  border: black ridge 1px;
+  border-radius: 10px;
+  margin: 3px;
+  width: 10rem;
+  padding-left: 10px;
+}
+.addButton:hover{
+  background-color: #415989;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
