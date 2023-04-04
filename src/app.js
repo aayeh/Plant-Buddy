@@ -9,11 +9,12 @@ import './app.css';
 
 export const PlantContext = React.createContext({
   plants: [],
-  addPlant: () => {}
+  addPlant: () => {},
+  deletePlant: () => {}
 });
 const App = () => {
-  const [plants, addPlant] = useState([])
-  const value = {plants, addNewPlant}
+  const [plants, addPlant, deletePlant] = useState([])
+  const value = {plants, addNewPlant, deleteNewPlant}
   const { isLoading } = useAuth0();
 
   if (isLoading) {
@@ -22,6 +23,9 @@ const App = () => {
 
 function addNewPlant(plantName){
   addPlant([...plants,plantName])
+}
+function deleteNewPlant(plantName){  
+  deletePlant([...plants,plantName])
 }
 
   return (

@@ -11,7 +11,9 @@ function SearchContent () {
 
   return (
     <div className="search">
-
+    <button className = "addButton" onClick = {""}>
+        Add new plant
+      </button>
     <br/>
       <input type="text" placeholder="seach by name..." style={{width: "400px"}}
       onChange={e=>setSearchTerm(e.target.value)}/>

@@ -7,11 +7,16 @@ import {PlantContext} from "../app.js"
 
 
 function PlantInfo (props) {
+  const [searchTerm,setSearchTerm] = useState('')
   const [addedPlant, setAddedPlant] = useState(false)
   const params = useParams()
-  const {plants,addNewPlant} = useContext(PlantContext)
+  const {plants,addNewPlant, deleteNewPlant} = useContext(PlantContext)
   const addButtonClicked =() =>{
     addNewPlant(params.name);
+    setAddedPlant(true)
+  }
+  const deleteButtonClicked =() =>{
+    deleteNewPlant(params.name);
     setAddedPlant(true)
   }
   const result = JSONDATA.filter(plant => plant.name == params.name)[0]
@@ -23,7 +28,9 @@ function PlantInfo (props) {
         <table className = "plantTable">
           <tr>
             <td>Plant Species</td>
-            <td>{result.species}</td>
+            <td>{<input type="text" placeholder={result.name} style={{width: "400px"}}
+              onChange={e=>setSearchTerm(e.target.value)}/>}
+            </td>
           </tr>
           <tr>
             <td>Fertilizer</td>
@@ -55,6 +62,10 @@ function PlantInfo (props) {
           </tr>
         </table>
         <br/>
+        <button className = "addButton" onClick = {deleteButtonClicked}>
+          Delete Plant
+        </button>
+        {addedPlant && <div style={{color:"green"}}>Plant Added!</div>}
         <button className = "addButton" onClick = {addButtonClicked}>
           Add to Profile
         </button>
