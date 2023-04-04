@@ -6,6 +6,6 @@ SID: 2311707
 
 To Run:
 
-  1. npm install
+  1. npm install --force
   
   2. npm start
